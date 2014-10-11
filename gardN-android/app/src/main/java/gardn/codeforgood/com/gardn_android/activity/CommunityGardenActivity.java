@@ -25,29 +25,32 @@ import gardn.codeforgood.com.gardn_android.model.User;
 
 public class CommunityGardenActivity extends Activity {
     private ListView resultListView;
+    private List<Post> postsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_garden);
 
+        postsList = new ArrayList<Post>();
+
         new AsyncTask<Void, Void, Boolean>(){
-            JSONArray array;
+            JSONArray allJSONPosts;
 
             @Override
             protected Boolean doInBackground(Void... voids) {
 
                 String uri = getString(R.string.conn) + getString(R.string.posts_index);
                 try{
-                    array = HttpHelper.httpGet(uri).getJSONArray("posts");
+                    allJSONPosts = HttpHelper.httpGet(uri).getJSONArray("posts");
                 }catch(Exception e){
                     System.out.print(e.getMessage());
                     return false;
                 }
 
-                for(int j = 0; j<array.length(); j++){
+                for(int j = 0; j<allJSONPosts.length(); j++){
                     try{
-                        JSONObject obj = array.getJSONObject(j);
+                        JSONObject obj = allJSONPosts.getJSONObject(j);
 
                         //create user for post
                         JSONObject user = obj.getJSONObject("user");
@@ -80,9 +83,12 @@ public class CommunityGardenActivity extends Activity {
                         newPost.setUpkeep(obj.getString("upkeep"));
                         newPost.setBenefits(obj.getString("benefits"));
                         newPost.setTips(obj.getString("tips"));
+
+                        postsList.add(newPost);
                     }
                     catch (Exception e){
                         Post noPosts = new Post("No Posts :(");
+                        postsList.add(0, noPosts);
                     }
 
                 }
@@ -92,19 +98,11 @@ public class CommunityGardenActivity extends Activity {
 
             @Override
             protected void onPostExecute(final Boolean success){
-                List<String> posts = new ArrayList<String>();
-                for(int i = 0; i < array.length(); i++){
-                    try {
-                        JSONObject json = array.getJSONObject(i);
-                        posts.add(json.getString("common_name"));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
 
                 if(success){
-                    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(CommunityGardenActivity.this,
-                            android.R.layout.simple_list_item_1 );
+                    ArrayAdapter<Post> dataAdapter = new ArrayAdapter<Post>(CommunityGardenActivity.this,
+                            android.R.layout.simple_list_item_1, postsList);
+
                     dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     resultListView.setAdapter(dataAdapter);
                 }
