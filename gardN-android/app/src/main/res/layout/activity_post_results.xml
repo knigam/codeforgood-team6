@@ -10,6 +10,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Plant Name "
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
@@ -18,6 +20,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Season, Size, Color"
+        android:textColor="#FFFFFF"
         android:id="@+id/textView2" />
 
     <TextView
@@ -25,6 +28,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Duration, active growth, lifespan"
+        android:textColor="#FFFFFF"
         android:id="@+id/textView3" />
 
     <TextView
@@ -32,6 +36,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Prefer Climate, Shade and Drought Tol."
+        android:textColor="#FFFFFF"
         android:id="@+id/textView4" />
 
     <ListView
