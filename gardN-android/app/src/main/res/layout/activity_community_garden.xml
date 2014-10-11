@@ -13,20 +13,22 @@
         android:layout_gravity="center_horizontal" />
 
     <TextView
-        android:layout_width="303dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="             The Community Garden"
+        android:text="The Community Garden"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Search for an Animal or Plant!"
         android:textColor="#FFFFFF"
-        android:id="@+id/textView5" />
+        android:id="@+id/textView5"
+        android:clickable="false" />
 
     <Button
         android:layout_width="match_parent"

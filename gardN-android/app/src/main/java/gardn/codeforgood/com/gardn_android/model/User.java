@@ -43,31 +43,26 @@ public class User {
     private int id;
     private String email;
 
-    private User() {
+    public User(){
+
+    }
+    public User(int id, String email) {
+        this.id = id;
+        this.email = email;
     }
 
-    public String setEmail(String email, Context appContext) {
+    public String setEmail(String email) {
         this.email = email;
-        final SharedPreferences prefs = appContext.getSharedPreferences(appContext.getString(R.string.package_name), appContext.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(USER_EMAIL, email);
-        editor.commit();
-
-        return ourInstance.email;
+        return email;
     }
 
     public String getEmail() {
         return this.email;
     }
 
-    public int setId(int id, Context appContext) {
+    public int setId(int id) {
         this.id = id;
-        final SharedPreferences prefs = appContext.getSharedPreferences(appContext.getString(R.string.package_name), appContext.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putInt(USER_ID, id);
-        editor.commit();
-
-        return ourInstance.id;
+        return id;
     }
 
     public int getId() {
