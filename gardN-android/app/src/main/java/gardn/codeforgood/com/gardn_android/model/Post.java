@@ -12,6 +12,7 @@ public class Post {
     private String upkeep;
     private String benefits;
     private String tips;
+    private Plant plant;
 
     private Post(){
     }
@@ -46,6 +47,11 @@ public class Post {
         return latitude;
     }
 
+    public Plant setPlant(Plant plant){
+        this.plant=plant;
+        return plant;
+    }
+
     public int getUser(){
         return this.user;
     }
@@ -69,4 +75,6 @@ public class Post {
     public String getTips() {
         return this.tips;
     }
+
+    public Plant getPlant() { return this.plant; }
 }

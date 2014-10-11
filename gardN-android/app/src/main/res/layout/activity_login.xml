@@ -36,11 +36,11 @@
             android:weightSum="1">
 
             <ImageView
-                android:layout_width="312dp"
+                android:layout_width="298dp"
                 android:layout_height="100dp"
                 android:id="@+id/imageView"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="0.05"
+                android:layout_weight="0.11"
                 android:background="@drawable/gardnlogo" />
 
             <Space
