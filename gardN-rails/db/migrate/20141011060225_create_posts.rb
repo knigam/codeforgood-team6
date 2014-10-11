@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.decimal :latitude
       t.string :instructions
       t.string :upkeep
-      t.string :benifits
+      t.string :benefits
       t.string :tips
 
       t.timestamps

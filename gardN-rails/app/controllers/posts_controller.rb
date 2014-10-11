@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    respond_to do |format|
+				format.html { }
+				format.json { render :json => {:posts => @posts.map{ |p| {:user => p.user, :plant_id => p.plant_id, :longitude => p.longitude, :latitude => p.latitude, :instructions => p.instructions, :upkeep => p.upkeep, :benefits => p.benefits, :tips => p.tips } }}}
+		end
   end
 
   # GET /posts/name
