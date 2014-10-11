@@ -4,6 +4,7 @@ package gardn.codeforgood.com.gardn_android.model;
  * Created by kushal on 10/10/14.
  */
 public class Plant {
+    private int plant_id;
     private String accepted_symbol;
     private String synonym_symbol;
     private String scientific_name;
@@ -21,6 +22,14 @@ public class Plant {
 
     public Plant(){
 
+    }
+
+    public Plant(int plant_id){
+        this.plant_id = plant_id;
+    }
+
+    public int getPlant_id(){
+        return this.plant_id;
     }
 
     public String getAccepted_symbol() {

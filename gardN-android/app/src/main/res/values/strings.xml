@@ -39,7 +39,7 @@
     <string name="error_description_too_long">Description must be less than 255 character</string>
 
     <!-- Routes -->
-    <string name="conn">https://www.room-mate.com</string>
+    <string name="conn">https://gardn.room-mate.me</string>
     <string name="sign_in">/users/sign_in.json</string>
     <string name="sign_up">/users.json</string>
     <string name="sign_out">/users/sign_out</string>

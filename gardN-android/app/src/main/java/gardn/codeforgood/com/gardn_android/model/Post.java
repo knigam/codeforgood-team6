@@ -4,16 +4,39 @@ package gardn.codeforgood.com.gardn_android.model;
  * Created by Yasasvi on 10/11/14.
  */
 public class Post {
-    private int user;
-    private int plant_id;
+    private int post_id;
+    private User user;
+    private Plant plant;
     private Double longitude;
     private Double latitude;
     private String instructions;
     private String upkeep;
     private String benefits;
     private String tips;
+    private int userRating;
 
-    private Post(){
+
+    public Post(){
+    }
+
+    public Post(String str){
+        this.post_id = 0;
+        this.user = null;
+        this.instructions = str;
+    }
+
+    public Post(int post_id, User user){
+        this.post_id = post_id;
+        this.user = user;
+    }
+
+    public int setUserRating(int userRating) {
+        this.userRating = userRating;
+        return userRating;
+    }
+
+    public int getUserRating(){
+        return this.userRating;
     }
 
     public String setInstructions(String instructions){
@@ -46,13 +69,18 @@ public class Post {
         return latitude;
     }
 
-    public int getUser(){
+    public Plant setPlant(Plant plant){
+        this.plant=plant;
+        return plant;
+    }
+
+    public int getPost_id(){ return this.post_id; }
+
+    public User getUser(){
         return this.user;
     }
 
-    public int getPlant_id(){
-        return this.plant_id;
-    }
+    public Plant getPlant() { return this.plant; }
 
     public String getInstructions(){
         return this.instructions;
@@ -69,4 +97,5 @@ public class Post {
     public String getTips() {
         return this.tips;
     }
+
 }
