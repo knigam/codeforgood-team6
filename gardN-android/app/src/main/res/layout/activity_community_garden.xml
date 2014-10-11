@@ -30,10 +30,11 @@
         android:id="@+id/textView5"
         android:clickable="false" />
 
-    <SearchView
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/searchView"
+        android:id="@+id/button2"
+        android:text="Search for plant or animal"
         android:iconifiedByDefault="true" />
 
     <ListView
