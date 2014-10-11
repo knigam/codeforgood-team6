@@ -1,0 +1,103 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.keonasoft.mayfly.activity.LoginActivity">
+
+    <!-- Login progress -->
+    <LinearLayout android:id="@+id/login_status"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ProgressBar style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/login_status_message"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:fontFamily="sans-serif-light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/login_progress_signing_in" />
+    </LinearLayout>
+
+    <!-- Login form -->
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/LoginFormContainer"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/email"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/prompt_email" />
+
+            <EditText
+                android:id="@+id/password"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password"
+                android:inputType="textPassword"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeActionId="@+id/login"
+                android:imeOptions="actionUnspecified" />
+
+            <EditText
+                android:id="@+id/passwordConfirmation"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password_confirmation"
+                android:inputType="textPassword"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/newUserName"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_name"
+                android:inputType="textPersonName"
+                android:imeActionLabel="@string/action_create_user_short"
+                android:imeActionId="@+id/create"
+                android:visibility="invisible"
+                android:imeOptions="actionUnspecified"
+                android:layout_gravity="center_horizontal" />
+
+            <Button android:id="@+id/auth_submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="15dp"
+                android:text="@string/action_sign_in_short"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp" />
+
+            <Button
+                android:id="@+id/auth_type_toggle_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="15dp"
+                android:text="@string/toggle_need_account"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</merge>
