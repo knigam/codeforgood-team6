@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import gardn.codeforgood.com.gardn_android.R;
+import gardn.codeforgood.com.gardn_android.helper.HttpHelper;
 
 
 public class MainActivity extends Activity {
@@ -14,6 +15,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        HttpHelper.getInstance().initialize(MainActivity.this);
     }
 
 
@@ -35,4 +37,5 @@ public class MainActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

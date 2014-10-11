@@ -61,11 +61,12 @@ public class LoginActivity extends Activity {
     private RadioGroup buttons;
     private Button submitBtn;
     private Button toggleBtn;
+    private Button guestBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        HttpHelper.getInstance().initialize(LoginActivity.this);
         setContentView(R.layout.activity_login);
         conn = getString(R.string.conn);
         // Set up the login form.
@@ -103,8 +104,17 @@ public class LoginActivity extends Activity {
         mLoginStatusMessageView = (TextView) findViewById(R.id.login_status_message);
         submitBtn = (Button) findViewById(R.id.auth_submit_button);
         toggleBtn = (Button) findViewById(R.id.auth_type_toggle_btn);
-        buttons.addView(submitBtn);
-        buttons.addView(toggleBtn);
+        guestBtn = (Button) findViewById(R.id.guestBtn);
+        guestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, CommunityGardenActivity.class);
+                startActivity(intent);
+            }
+        });
+//        buttons = new RadioGroup(LoginActivity.this, null);
+  //      buttons.addView(submitBtn);
+    //    buttons.addView(toggleBtn);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +130,7 @@ public class LoginActivity extends Activity {
                     submitBtn.setText(R.string.action_create_user_short);
                     toggleBtn.setText(R.string.toggle_have_account);
                     mPasswordConfirmationView.setVisibility(view.VISIBLE);
-                    mNameView.setVisibility(view.VISIBLE);
+//                    mNameView.setVisibility(view.VISIBLE);
                     mPasswordView.setImeActionLabel("Next", EditorInfo.IME_ACTION_NEXT);
                     signIn = false;
                 }
@@ -128,7 +138,7 @@ public class LoginActivity extends Activity {
                     submitBtn.setText(R.string.action_sign_in_short);
                     toggleBtn.setText(R.string.toggle_need_account);
                     mPasswordConfirmationView.setVisibility(view.INVISIBLE);
-                    mNameView.setVisibility(view.INVISIBLE);
+//                    mNameView.setVisibility(view.INVISIBLE);
                     mPasswordView.setImeActionLabel(getString(R.string.action_sign_in_short), EditorInfo.IME_NULL);
 //                    buttons.setVisibility(view.VISIBLE);
                     signIn = true;
@@ -274,6 +284,8 @@ public class LoginActivity extends Activity {
     private void getUserData(){
 
     }
+
+
 
     /**
      * Represents an asynchronous login/registration task used to authenticate

@@ -114,8 +114,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Continue as Guest"
-                android:id="@+id/button"
-                android:layout_gravity="center_horizontal" />
+                android:id="@+id/guestBtn"
+                android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
 
