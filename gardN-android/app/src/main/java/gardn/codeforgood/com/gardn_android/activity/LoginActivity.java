@@ -183,14 +183,14 @@ public class LoginActivity extends Activity {
         // If registering a new user
         if (!signIn){
             mPasswordConfirmation = mPasswordConfirmationView.getText().toString(); //store value
-            mName = mNameView.getText().toString();
-
-            //Check to see if name field is filled out
-            if (TextUtils.isEmpty(mName)) {
-                mNameView.setError(getString(R.string.error_field_required));
-                focusView = mNameView;
-                cancel = true;
-            }
+//            mName = mNameView.getText().toString();
+//
+//            //Check to see if name field is filled out
+//            if (TextUtils.isEmpty(mName)) {
+//                mNameView.setError(getString(R.string.error_field_required));
+//                focusView = mNameView;
+//                cancel = true;
+//            }
 
             //Check for valid password confirmation
             if (TextUtils.isEmpty(mPasswordConfirmation)) {
