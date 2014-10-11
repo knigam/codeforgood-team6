@@ -43,3 +43,4 @@ gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'unicorn'
+gem 'mandrill-api'
