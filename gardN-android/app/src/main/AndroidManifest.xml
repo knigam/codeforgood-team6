@@ -32,6 +32,14 @@
             android:name=".activity.PostResultsActivity"
             android:label="@string/title_activity_post_results" >
         </activity>
+        <activity
+            android:name=".activity.NewPostActivity"
+            android:label="@string/title_activity_new_post" >
+        </activity>
+        <activity
+            android:name=".activity.BranchOutActivity"
+            android:label="@string/title_activity_branch_out" >
+        </activity>
     </application>
 
 </manifest>
