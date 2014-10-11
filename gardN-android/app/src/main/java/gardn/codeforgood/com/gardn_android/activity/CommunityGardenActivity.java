@@ -19,6 +19,9 @@ import java.util.List;
 
 import gardn.codeforgood.com.gardn_android.R;
 import gardn.codeforgood.com.gardn_android.helper.HttpHelper;
+import gardn.codeforgood.com.gardn_android.model.Plant;
+import gardn.codeforgood.com.gardn_android.model.Post;
+import gardn.codeforgood.com.gardn_android.model.User;
 
 public class CommunityGardenActivity extends Activity {
     private ListView resultListView;
@@ -40,6 +43,48 @@ public class CommunityGardenActivity extends Activity {
                 }catch(Exception e){
                     System.out.print(e.getMessage());
                     return false;
+                }
+
+                for(int j = 0; j<array.length(); j++){
+                    try{
+                        JSONObject obj = array.getJSONObject(j);
+
+                        //create user for post
+                        JSONObject user = obj.getJSONObject("user");
+                        User newUser = new User(user.getInt("id"), user.getString("email"));
+
+                        //create plant for post
+                        JSONObject plant = obj.getJSONObject("plant");
+                        Plant newPlant = new Plant(plant.getInt("id"));
+                        newPlant.setAccepted_symbol(plant.getString("accepted_symbol"));
+                        newPlant.setSynonym_symbol(plant.getString("synonym_symbol"));
+                        newPlant.setScientific_name(plant.getString("scientific_name"));
+                        newPlant.setCommon_name(plant.getString("common_name"));
+                        newPlant.setDuration(plant.getString("duration"));
+                        newPlant.setGrowth_habit(plant.getString("growth_habit"));
+                        newPlant.setGrowth_period(plant.getString("growth_period"));
+                        newPlant.setFlower_color(plant.getString("flower_color"));
+                        newPlant.setFlower_conspicuous(plant.getBoolean("flower_conspicuous"));
+                        newPlant.setHeight_mature(plant.getString("height_mature"));
+                        newPlant.setLifespan(plant.getString("lifespan"));
+                        newPlant.setDrought_tolerance(plant.getString("drought_tolerance"));
+                        newPlant.setShade_tolerance(plant.getString("shade_tolerance"));
+                        newPlant.setBloom_period(plant.getString("bloom_period"));
+
+                        //create new Post
+                        Post newPost = new Post(obj.getInt("id"), newUser);
+                        newPost.setPlant(newPlant);
+                        newPost.setLongitude(obj.getDouble("longitude"));
+                        newPost.setLatitude(obj.getDouble("latitude"));
+                        newPost.setInstructions(obj.getString("instructions"));
+                        newPost.setUpkeep(obj.getString("upkeep"));
+                        newPost.setBenefits(obj.getString("benefits"));
+                        newPost.setTips(obj.getString("tips"));
+                    }
+                    catch (Exception e){
+                        Post noPosts = new Post("No Posts :(");
+                    }
+
                 }
                 return true;
 
