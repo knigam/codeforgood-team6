@@ -24,6 +24,14 @@
             android:name=".activity.SearchFieldsActivity"
             android:label="@string/title_activity_search_fields" >
         </activity>
+        <activity
+            android:name=".activity.PostPageActivity"
+            android:label="@string/title_activity_post_page" >
+        </activity>
+        <activity
+            android:name=".activity.PostResultsActivity"
+            android:label="@string/title_activity_post_results" >
+        </activity>
     </application>
 
 </manifest>

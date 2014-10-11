@@ -46,5 +46,7 @@
     <string name="title_activity_community_garden">CommunityGardenActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_search_fields">SearchFieldsActivity</string>
+    <string name="title_activity_post_page">PostPageActivity</string>
+    <string name="title_activity_post_results">PostResultsActivity</string>
 
 </resources>
