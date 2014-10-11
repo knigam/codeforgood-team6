@@ -1,6 +1,8 @@
 package gardn.codeforgood.com.gardn_android.activity;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
@@ -80,9 +82,32 @@ public class CommunityGardenActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if (id == R.id.action_post) {
+            Intent intentMain = new Intent(CommunityGardenActivity.this,
+                                            NewPostActivity.class);
+            CommunityGardenActivity.this.startActivity(intentMain);
+
+            return true;
+        }
+        if (id == R.id.action_viewProf) {
+            return true;
+        }
+        if (id == R.id.action_donate) {
+
+            Uri uri = Uri.parse("https://online.nwf.org/site/Donation2?df_id=32500&32500.donation=form1&s_subsrc=Web_Header_Donate_06302014_Wrapper_CONTROL");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+
+            return true;
+        }
         if (id == R.id.action_settings) {
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        if (id == R.id.action_logout) {
+            return true;
+        }
+
+        return true;
+        }
     }
-}
+
