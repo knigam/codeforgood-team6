@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/name
   # GET /posts/name.json
   def search
-      @posts = Post.where(plant_id: Plant.find_by_name(params[:common_name]))
+      @posts = Post.where(plant_id: Plant.find_by_name(params[:name]))
   end
   
   # GET /posts/1
@@ -84,6 +84,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :plant_id, :longitude, :latitude, :instructions, :upkeep, :benifits, :tips)
+      params.require(:post).permit(:user_id, :plant_id, :longitude, :latitude, :instructions, :upkeep, :benefits, :tips)
     end
 end
