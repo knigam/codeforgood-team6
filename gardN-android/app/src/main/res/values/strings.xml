@@ -51,5 +51,6 @@
     <string name="title_activity_post_results">PostResultsActivity</string>
     <string name="title_activity_new_post">NewPostActivity</string>
     <string name="title_activity_branch_out">BranchOutActivity</string>
+    <string name="package_name">eep</string>
 
 </resources>

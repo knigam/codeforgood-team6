@@ -75,7 +75,7 @@ public class LoginActivity extends Activity {
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordConfirmationView = (EditText) findViewById(R.id.passwordConfirmation);
 
-        mNameView = (EditText) findViewById(R.id.newUserName);
+        //mNameView = (EditText) findViewById(R.id.newUserName);
 
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -87,16 +87,16 @@ public class LoginActivity extends Activity {
                 return false;
             }
         });
-        mNameView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (id == R.id.create || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
-                    return true;
-                }
-                return false;
-            }
-        });
+//        mNameView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
+//                if (id == R.id.create || id == EditorInfo.IME_NULL) {
+//                    attemptLogin();
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
 
         mLoginFormView = findViewById(R.id.login_form);
         mLoginStatusView = findViewById(R.id.login_status);
