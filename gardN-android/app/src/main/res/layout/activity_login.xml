@@ -40,7 +40,8 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:textColor="#FFFFFF"
-                android:text='"Enter the gardN"'
+                android:text='Enter the gardN'
+                android:textSize="40sp"
                 android:textStyle="bold"
                 android:id="@+id/textView"
                 android:layout_gravity="center_horizontal" />

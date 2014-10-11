@@ -24,6 +24,7 @@
         android:text="Branch Out!"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
+        android:textSize="40sp"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
