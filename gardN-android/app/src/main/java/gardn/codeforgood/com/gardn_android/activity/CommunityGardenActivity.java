@@ -7,7 +7,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -22,12 +24,21 @@ import gardn.codeforgood.com.gardn_android.helper.HttpHelper;
 
 public class CommunityGardenActivity extends Activity {
     private ListView resultListView;
+    Button btn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_garden);
 
+        btn1 = (Button) findViewById(R.id.button2);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CommunityGardenActivity.this, SearchFieldsActivity.class);
+                startActivity(intent);
+            }
+        });
         new AsyncTask<Void, Void, Boolean>(){
             JSONArray array;
 
