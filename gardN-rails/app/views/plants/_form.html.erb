@@ -1,0 +1,81 @@
+<%= form_for(@plant) do |f| %>
+  <% if @plant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+
+      <ul>
+      <% @plant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :accepted_symbol %><br>
+    <%= f.text_field :accepted_symbol %>
+  </div>
+  <div class="field">
+    <%= f.label :synonym_symbol %><br>
+    <%= f.text_field :synonym_symbol %>
+  </div>
+  <div class="field">
+    <%= f.label :scientific_name %><br>
+    <%= f.text_field :scientific_name %>
+  </div>
+  <div class="field">
+    <%= f.label :common_name %><br>
+    <%= f.text_field :common_name %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :growth_habit %><br>
+    <%= f.text_field :growth_habit %>
+  </div>
+  <div class="field">
+    <%= f.label :native_status %><br>
+    <%= f.text_field :native_status %>
+  </div>
+  <div class="field">
+    <%= f.label :growth_period %><br>
+    <%= f.text_field :growth_period %>
+  </div>
+  <div class="field">
+    <%= f.label :flower_color %><br>
+    <%= f.text_field :flower_color %>
+  </div>
+  <div class="field">
+    <%= f.label :flower_conspicuous %><br>
+    <%= f.check_box :flower_conspicuous %>
+  </div>
+  <div class="field">
+    <%= f.label :height_mature %><br>
+    <%= f.text_field :height_mature %>
+  </div>
+  <div class="field">
+    <%= f.label :lifespan %><br>
+    <%= f.text_field :lifespan %>
+  </div>
+  <div class="field">
+    <%= f.label :drought_tolerance %><br>
+    <%= f.text_field :drought_tolerance %>
+  </div>
+  <div class="field">
+    <%= f.label :shade_tolerance %><br>
+    <%= f.text_field :shade_tolerance %>
+  </div>
+  <div class="field">
+    <%= f.label :bloom_period %><br>
+    <%= f.text_field :bloom_period %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

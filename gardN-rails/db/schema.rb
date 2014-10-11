@@ -11,7 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011005344) do
+ActiveRecord::Schema.define(version: 20141011060533) do
+
+  create_table "plants", force: true do |t|
+    t.string   "accepted_symbol"
+    t.string   "synonym_symbol"
+    t.string   "scientific_name"
+    t.string   "common_name"
+    t.string   "duration"
+    t.string   "growth_habit"
+    t.string   "growth_period"
+    t.string   "flower_color"
+    t.boolean  "flower_conspicuous"
+    t.string   "height_mature"
+    t.string   "lifespan"
+    t.string   "drought_tolerance"
+    t.string   "shade_tolerance"
+    t.string   "bloom_period"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "plants_states", id: false, force: true do |t|
+    t.integer "plant_id"
+    t.integer "state_id"
+  end
+
+  create_table "posts", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "plant_id"
+    t.decimal  "longitude"
+    t.decimal  "latitude"
+    t.string   "instructions"
+    t.string   "upkeep"
+    t.string   "benifits"
+    t.string   "tips"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ratings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,51 @@
+<h1>Listing plants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Accepted symbol</th>
+      <th>Synonym symbol</th>
+      <th>Scientific name</th>
+      <th>Common name</th>
+      <th>Duration</th>
+      <th>Growth habit</th>
+      <th>Growth period</th>
+      <th>Flower color</th>
+      <th>Flower conspicuous</th>
+      <th>Height mature</th>
+      <th>Lifespan</th>
+      <th>Drought tolerance</th>
+      <th>Shade tolerance</th>
+      <th>Bloom period</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plants.each do |plant| %>
+      <tr>
+        <td><%= plant.accepted_symbol %></td>
+        <td><%= plant.synonym_symbol %></td>
+        <td><%= plant.scientific_name %></td>
+        <td><%= plant.common_name %></td>
+        <td><%= plant.duration %></td>
+        <td><%= plant.growth_habit %></td>
+        <td><%= plant.growth_period %></td>
+        <td><%= plant.flower_color %></td>
+        <td><%= plant.flower_conspicuous %></td>
+        <td><%= plant.height_mature %></td>
+        <td><%= plant.lifespan %></td>
+        <td><%= plant.drought_tolerance %></td>
+        <td><%= plant.shade_tolerance %></td>
+        <td><%= plant.bloom_period %></td>
+        <td><%= link_to 'Show', plant %></td>
+        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
+        <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plant', new_plant_path %>
