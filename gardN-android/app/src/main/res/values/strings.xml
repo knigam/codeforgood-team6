@@ -46,13 +46,10 @@
     <string name="title_activity_community_garden">CommunityGardenActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_search_fields">SearchFieldsActivity</string>
-<<<<<<< HEAD
     <string name="posts_index">/posts.json</string>
-=======
     <string name="title_activity_post_page">PostPageActivity</string>
     <string name="title_activity_post_results">PostResultsActivity</string>
     <string name="title_activity_new_post">NewPostActivity</string>
     <string name="title_activity_branch_out">BranchOutActivity</string>
->>>>>>> 1390b42a4720fc55da31c28f6fdaab8e51476db0
 
 </resources>
