@@ -98,4 +98,11 @@ public class Post {
         return this.tips;
     }
 
+    public String toString(){
+        return this.user.getEmail() + " has a new " + this.plant.getCommon_name();
+    }
+
+    public void setPost_id(int post_id) {
+        this.post_id = post_id;
+    }
 }

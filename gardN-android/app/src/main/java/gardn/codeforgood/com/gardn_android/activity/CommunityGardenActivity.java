@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -31,11 +32,26 @@ public class CommunityGardenActivity extends Activity {
     private List<Post> postsList;
     Random rand = new Random();
 
+    Button btn1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community_garden);
+        btn1 = (Button) findViewById(R.id.button2);
 
+        btn1.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+           if (v==btn1) {
+               Intent intentMain = new Intent(CommunityGardenActivity.this,
+                       SearchFieldsActivity.class);
+                   CommunityGardenActivity.this.startActivity(intentMain);
+                }
+            }
+        }
+        );
+
+        resultListView = (ListView)findViewById(R.id.postsListView);
         postsList = new ArrayList<Post>();
 
         new AsyncTask<Void, Void, Boolean>(){
@@ -47,6 +63,7 @@ public class CommunityGardenActivity extends Activity {
                 String uri = getString(R.string.conn) + getString(R.string.posts_index);
                 try{
                     allJSONPosts = HttpHelper.httpGet(uri).getJSONArray("posts");
+                    System.out.println("JSON OBJECTS" + allJSONPosts.toString());
                 }catch(Exception e){
                     System.out.print(e.getMessage());
                     return false;
@@ -88,6 +105,7 @@ public class CommunityGardenActivity extends Activity {
                         newPost.setUpkeep(obj.getString("upkeep"));
                         newPost.setBenefits(obj.getString("benefits"));
                         newPost.setTips(obj.getString("tips"));
+                        System.out.println(newPost.toString());
 
                         postsList.add(newPost);
                     }
@@ -101,19 +119,42 @@ public class CommunityGardenActivity extends Activity {
 
             }
 
+            protected List<String> postsList(List<Post> listPosts) {
+                List<String> allString = new ArrayList<String>();
+                for (Post post : listPosts) {
+                    String newString = post.toString();
+                    allString.add(newString);
+                }
+
+                return allString;
+            }
+
+
             @Override
             protected void onPostExecute(final Boolean success){
+                List<String> everything = postsList(postsList);
 
                 if(success){
-                    ArrayAdapter<Post> dataAdapter = new ArrayAdapter<Post>(CommunityGardenActivity.this,
-                            android.R.layout.simple_list_item_1, postsList);
-
+                    ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(CommunityGardenActivity.this,
+                            android.R.layout.simple_list_item_1, everything);
                     dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     resultListView.setAdapter(dataAdapter);
                 }
                 else {
                     System.out.println("Generating posts failed :( ");
                 }
+
+                resultListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        int postId = postsList.get(position).getPost_id();
+                        Intent intent = new Intent(CommunityGardenActivity.this, PostPageActivity.class);
+                        intent.putExtra("postId", postId);
+                        startActivity(intent);
+
+                    }
+                });
             }
         }.execute(null, null, null);
     }
@@ -133,7 +174,7 @@ public class CommunityGardenActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.action_post) {
             Intent intentMain = new Intent(CommunityGardenActivity.this,
-                                            NewPostActivity.class);
+                    NewPostActivity.class);
             CommunityGardenActivity.this.startActivity(intentMain);
 
             return true;
@@ -156,7 +197,14 @@ public class CommunityGardenActivity extends Activity {
             return true;
         }
 
-        return true;
+        if (id == R.id.action_branchout) {
+            Intent intentMain = new Intent(CommunityGardenActivity.this,
+                    BranchOutActivity.class);
+            CommunityGardenActivity.this.startActivity(intentMain);
+
+            return true;
         }
+        return true;
+    }
     }
 

@@ -326,8 +326,6 @@ public class LoginActivity extends Activity {
             try {
                 boolean success = result.getBoolean("success");
                 if(success){
-                    User.getInstance().setEmail(result.getString("email"), getApplicationContext());
-                    User.getInstance().setId(result.getInt("id"), getApplicationContext());
                     getUserData();
                     return true;
                 }

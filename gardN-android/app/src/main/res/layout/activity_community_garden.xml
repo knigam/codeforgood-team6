@@ -22,27 +22,19 @@
         android:id="@+id/textView2"
         android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search for an Animal or Plant!"
-        android:textColor="#FFFFFF"
-        android:id="@+id/textView5"
-        android:clickable="false" />
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2"
         android:text="Search for plant or animal"
-        android:iconifiedByDefault="true" />
+        android:iconifiedByDefault="true"
+        android:textColor="#FFFFFF"/>
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:id="@+id/listView"
+        android:layout_height="wrap_content"
+        android:id="@+id/postsListView"
         android:layout_gravity="center_horizontal"
-        tools:listitem="@android:layout/simple_expandable_list_item_2"
-        android:layout_weight="1" />
+        />
 
 </LinearLayout>
