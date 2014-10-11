@@ -44,15 +44,17 @@
                 android:id="@+id/textView"
                 android:layout_gravity="center_horizontal" />
 
-            <EditText
-                android:id="@+id/passwordConfirmation"
-                android:singleLine="true"
-                android:maxLines="1"
+            <Space
                 android:layout_width="match_parent"
+                android:layout_height="20px"
+                android:layout_weight="0.22" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/prompt_password_confirmation"
-                android:inputType="textPassword"
-                android:visibility="invisible" />
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="                                                                Helping gardeners everywhere connect for the prosperity of wildlife."
+                android:id="@+id/textView2" />
 
             <EditText
                 android:id="@+id/email"
@@ -74,6 +76,16 @@
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified" />
+
+            <EditText
+                android:id="@+id/passwordConfirmation"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password_confirmation"
+                android:inputType="textPassword"
+                android:visibility="invisible" />
 
             <Button android:id="@+id/auth_submit_button"
                 android:layout_width="match_parent"
@@ -104,14 +116,6 @@
                 android:layout_height="wrap_content"
                 android:text="Continue as Guest"
                 android:id="@+id/button"
-                android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Creating an account can help gardN learn about what plants can best help your local environment"
-                android:id="@+id/textView2"
                 android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
