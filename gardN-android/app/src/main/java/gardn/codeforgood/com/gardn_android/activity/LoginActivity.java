@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -57,6 +58,7 @@ public class LoginActivity extends Activity {
     private View mLoginFormView;
     private View mLoginStatusView;
     private TextView mLoginStatusMessageView;
+    private RadioGroup buttons;
     private Button submitBtn;
     private Button toggleBtn;
 
@@ -101,6 +103,8 @@ public class LoginActivity extends Activity {
         mLoginStatusMessageView = (TextView) findViewById(R.id.login_status_message);
         submitBtn = (Button) findViewById(R.id.auth_submit_button);
         toggleBtn = (Button) findViewById(R.id.auth_type_toggle_btn);
+        buttons.addView(submitBtn);
+        buttons.addView(toggleBtn);
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +130,7 @@ public class LoginActivity extends Activity {
                     mPasswordConfirmationView.setVisibility(view.INVISIBLE);
                     mNameView.setVisibility(view.INVISIBLE);
                     mPasswordView.setImeActionLabel(getString(R.string.action_sign_in_short), EditorInfo.IME_NULL);
+//                    buttons.setVisibility(view.VISIBLE);
                     signIn = true;
                 }
             }

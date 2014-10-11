@@ -28,10 +28,31 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="false">
 
         <LinearLayout style="@style/LoginFormContainer"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:id="@+id/">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text='"Enter the gardN" - Zain Sharif'
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal" />
+
+            <EditText
+                android:id="@+id/passwordConfirmation"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_password_confirmation"
+                android:inputType="textPassword"
+                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/email"
@@ -54,30 +75,6 @@
                 android:imeActionId="@+id/login"
                 android:imeOptions="actionUnspecified" />
 
-            <EditText
-                android:id="@+id/passwordConfirmation"
-                android:singleLine="true"
-                android:maxLines="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prompt_password_confirmation"
-                android:inputType="textPassword"
-                android:visibility="invisible" />
-
-            <EditText
-                android:id="@+id/newUserName"
-                android:singleLine="true"
-                android:maxLines="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prompt_name"
-                android:inputType="textPersonName"
-                android:imeActionLabel="@string/action_create_user_short"
-                android:imeActionId="@+id/create"
-                android:visibility="invisible"
-                android:imeOptions="actionUnspecified"
-                android:layout_gravity="center_horizontal" />
-
             <Button android:id="@+id/auth_submit_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,9 +90,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textSize="15dp"
-                android:text="@string/toggle_need_account"
+                android:text="New to gardN?"
                 android:paddingLeft="32dp"
                 android:paddingRight="32dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"></LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Continue as Guest"
+                android:id="@+id/button"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Creating an account can help gardN learn about what plants can best help your local environment"
+                android:id="@+id/textView2"
+                android:layout_gravity="center_horizontal" />
 
         </LinearLayout>
 

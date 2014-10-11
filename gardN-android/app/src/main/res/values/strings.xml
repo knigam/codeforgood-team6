@@ -4,7 +4,6 @@
     <string name="app_name">gardN-android</string>
     <string name="action_settings">Settings</string>
     <string name="please_wait_progress">Please wait…</string>
-
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
@@ -12,17 +11,13 @@
     <string name="prompt_password">Password</string>
     <string name="prompt_password_confirmation">Confirm Password</string>
     <string name="prompt_name">Name</string>
-
     <string name="action_sign_in_register"><b>Sign in</b> or register</string>
     <string name="action_sign_in_short">Sign In</string>
     <string name="action_create_user_short">Create User</string>
     <string name="toggle_have_account">Have an Account?</string>
     <string name="toggle_need_account">Need an Account?</string>
-
     <string name="action_forgot_password">Recover lost password</string>
-
-    <string name="login_progress_signing_in">Signing in&#8230;</string>
-
+    <string name="login_progress_signing_in">Signing in…</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_confirmation">These passwords don\'t match</string>
@@ -48,7 +43,7 @@
     <string name="sign_in">/users/sign_in.json</string>
     <string name="sign_up">/users.json</string>
     <string name="sign_out">/users/sign_out</string>
-
-
+    <string name="title_activity_community_garden">CommunityGardenActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
