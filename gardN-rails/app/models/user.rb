@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   has_many :ratings
+	has_many :comments
  
   private
   def send_email(text, email)
@@ -25,4 +26,12 @@ class User < ActiveRecord::Base
         sending = m.messages.send message  
   end 
 
+	def get_rating
+		up = self.ratings.where(rating: 1)
+		if self.ratings.count != 0
+			total = up/self.ratings.count
+		else
+			total = 0
+		end
+	end
 end

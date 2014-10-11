@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     respond_to do |format|
 				format.html { }
-				format.json { render :json => {:posts => @posts.map{ |p| {:user => p.user, :plant => Plant.find(p.plant_id), :longitude => p.longitude, :latitude => p.latitude, :instructions => p.instructions, :upkeep => p.upkeep, :benefits => p.benefits, :tips => p.tips } }}}
+				format.json { render :json => {:posts => @posts.map{ |p| {:id => p.id, :user => p.user, :plant => Plant.find(p.plant_id), :longitude => p.longitude, :latitude => p.latitude, :instructions => p.instructions, :upkeep => p.upkeep, :benefits => p.benefits, :tips => p.tips } }}}
 		end
   end
 
@@ -20,6 +20,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+		p = Post.find(params[:id])
+    respond_to do |format|
+				format.html { }
+				format.json { render :json => {:post => {:id => p.id, :user => p.user, :plant => Plant.find(p.plant_id), :longitude => p.longitude, :latitude => p.latitude, :instructions => p.instructions, :upkeep => p.upkeep, :benefits => p.benefits, :tips => p.tips, :comments => p.comments} }}
+		end
   end
 
   # GET /posts/new
