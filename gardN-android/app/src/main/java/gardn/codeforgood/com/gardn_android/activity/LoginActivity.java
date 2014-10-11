@@ -307,7 +307,6 @@ public class LoginActivity extends Activity {
             }
             else{
                 map.put("password_confirmation", mPasswordConfirmation);
-                map.put("name", mName);
                 uri += getString(R.string.sign_up);
             }
 
@@ -346,7 +345,7 @@ public class LoginActivity extends Activity {
             showProgress(false);
 
             if (success) {
-                Intent intent = new Intent(LoginActivity.this, AppActivity.class);
+                Intent intent = new Intent(LoginActivity.this, CommunityGardenActivity.class);
                 startActivity(intent);
                 finish();
             } else {
