@@ -24,6 +24,22 @@
             android:name=".activity.SearchFieldsActivity"
             android:label="@string/title_activity_search_fields" >
         </activity>
+        <activity
+            android:name=".activity.PostPageActivity"
+            android:label="@string/title_activity_post_page" >
+        </activity>
+        <activity
+            android:name=".activity.PostResultsActivity"
+            android:label="@string/title_activity_post_results" >
+        </activity>
+        <activity
+            android:name=".activity.NewPostActivity"
+            android:label="@string/title_activity_new_post" >
+        </activity>
+        <activity
+            android:name=".activity.BranchOutActivity"
+            android:label="@string/title_activity_branch_out" >
+        </activity>
     </application>
 
 </manifest>

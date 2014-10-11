@@ -6,6 +6,12 @@
     android:id="@+id/linearlayout1"
     android:weightSum="1">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:layout_weight="0.11"
+        android:id="@+id/space2" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,9 +22,22 @@
 
     <Space
         android:layout_width="match_parent"
+        android:layout_height="20px"
+        android:layout_weight="0.05"
+        android:id="@+id/space" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="  Fill one or more fields - and we'll do the rest!"
+        android:id="@+id/textView5" />
+
+    <Space
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.09" />
+        android:layout_weight="0.12" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,4 +84,17 @@
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:id="@+id/editText3" />
+
+    <Space
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.16" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go!"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
