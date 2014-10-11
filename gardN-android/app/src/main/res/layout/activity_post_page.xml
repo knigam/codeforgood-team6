@@ -16,6 +16,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="        Here's what _____ is doing!"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:id="@+id/textView"
         android:layout_weight="0.04" />
 
@@ -47,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Plant Name "
+                android:textColor="#FFFFFF"
                 android:id="@+id/textView2"
                 android:layout_gravity="right" />
 
@@ -55,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Animals Viewed"
+                android:textColor="#FFFFFF"
                 android:id="@+id/textView3"
                 android:layout_gravity="right" />
 
@@ -63,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Posted X minutes ago"
+                android:textColor="#FFFFFF"
                 android:id="@+id/textView4"
                 android:layout_gravity="right" />
 
@@ -71,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Y miles away from you "
+                android:textColor="#FFFFFF"
                 android:id="@+id/textView5"
                 android:layout_gravity="right" />
 

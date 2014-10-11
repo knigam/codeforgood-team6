@@ -17,6 +17,8 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Gather your Garden!"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal" />
 
@@ -30,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF"
         android:text="  Fill one or more fields - and we'll do the rest!"
         android:id="@+id/textView5" />
 
@@ -43,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FFFFFF"
         android:text="    What plant do you want to grow?"
         android:id="@+id/textView2" />
 
@@ -61,6 +65,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="    What animals do you want to support?"
+        android:textColor="#FFFFFF"
         android:id="@+id/textView3" />
 
     <EditText
@@ -78,6 +83,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="    What season do you want to grow in?"
+        android:textColor="#FFFFFF"
         android:id="@+id/textView4" />
 
     <EditText

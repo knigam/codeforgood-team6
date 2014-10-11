@@ -39,7 +39,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text='"Enter the gardN" - Zain Sharif'
+                android:textColor="#FFFFFF"
+                android:text='Enter the gardN'
+                android:textSize="40sp"
+                android:textStyle="bold"
                 android:id="@+id/textView"
                 android:layout_gravity="center_horizontal" />
 
@@ -53,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="                                                                Helping gardeners everywhere connect for the prosperity of wildlife."
+                android:textColor="#FFFFFF"
                 android:id="@+id/textView2" />
 
             <EditText
