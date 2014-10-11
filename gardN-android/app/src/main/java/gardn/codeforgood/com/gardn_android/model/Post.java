@@ -13,6 +13,7 @@ public class Post {
     private String upkeep;
     private String benefits;
     private String tips;
+    private int userRating;
 
 
     public Post(){
@@ -27,6 +28,15 @@ public class Post {
     public Post(int post_id, User user){
         this.post_id = post_id;
         this.user = user;
+    }
+
+    public int setUserRating(int userRating) {
+        this.userRating = userRating;
+        return userRating;
+    }
+
+    public int getUserRating(){
+        return this.userRating;
     }
 
     public String setInstructions(String instructions){

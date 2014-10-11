@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import gardn.codeforgood.com.gardn_android.R;
 import gardn.codeforgood.com.gardn_android.helper.HttpHelper;
@@ -26,6 +27,7 @@ import gardn.codeforgood.com.gardn_android.model.User;
 public class CommunityGardenActivity extends Activity {
     private ListView resultListView;
     private List<Post> postsList;
+    Random rand = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +79,7 @@ public class CommunityGardenActivity extends Activity {
                         //create new Post
                         Post newPost = new Post(obj.getInt("id"), newUser);
                         newPost.setPlant(newPlant);
+                        newPost.setUserRating(rand.nextInt(50)+50);
                         newPost.setLongitude(obj.getDouble("longitude"));
                         newPost.setLatitude(obj.getDouble("latitude"));
                         newPost.setInstructions(obj.getString("instructions"));
@@ -107,7 +110,7 @@ public class CommunityGardenActivity extends Activity {
                     resultListView.setAdapter(dataAdapter);
                 }
                 else {
-
+                    System.out.println("Generating posts failed :( ");
                 }
             }
         }.execute(null, null, null);
