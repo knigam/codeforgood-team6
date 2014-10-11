@@ -35,29 +35,31 @@
             android:orientation="vertical"
             android:weightSum="1">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#FFFFFF"
-                android:text='Enter the gardN'
-                android:textSize="40sp"
-                android:textStyle="bold"
-                android:id="@+id/textView"
-                android:layout_gravity="center_horizontal" />
+            <ImageView
+                android:layout_width="312dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageView"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="0.05"
+                android:background="@drawable/gardnlogo" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="20px"
+                android:layout_height="70px"
                 android:layout_weight="0.22" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="                                                                Helping gardeners everywhere connect for the prosperity of wildlife."
+                android:text="Helping gardeners everywhere connect for the prosperity of wildlife."
                 android:textColor="#FFFFFF"
                 android:id="@+id/textView2" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="50px"
+                android:layout_gravity="center_horizontal" />
 
             <EditText
                 android:id="@+id/email"
