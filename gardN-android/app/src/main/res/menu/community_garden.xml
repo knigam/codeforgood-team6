@@ -3,6 +3,22 @@
     tools:context="gardn.codeforgood.com.gardn_android.activity.CommunityGardenActivity" >
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
+        android:orderInCategory="400"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_post"
+        android:title="Post"
         android:orderInCategory="100"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_viewProf"
+        android:title="View My Profile"
+        android:orderInCategory="200"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_donate"
+        android:title="Donate to NWF!"
+        android:orderInCategory="300"
+        android:showAsAction="never" />
+    <item android:id="@+id/action_logout"
+        android:title="Logout"
+        android:orderInCategory="500"
         android:showAsAction="never" />
 </menu>

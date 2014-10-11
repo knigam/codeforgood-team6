@@ -1,0 +1,68 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Gather your Garden!"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.09" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="    What plant do you want to grow?"
+        android:id="@+id/textView2" />
+
+    <EditText
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText" />
+
+    <Space
+        android:layout_width="315dp"
+        android:layout_height="20px"
+        android:layout_weight="0.05" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="    What animals do you want to support?"
+        android:id="@+id/textView3" />
+
+    <EditText
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2" />
+
+    <Space
+        android:layout_width="341dp"
+        android:layout_height="20px"
+        android:layout_weight="0.06" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="    What season do you want to grow in?"
+        android:id="@+id/textView4" />
+
+    <EditText
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3" />
+</LinearLayout>

@@ -20,6 +20,10 @@
             android:name=".activity.CommunityGardenActivity"
             android:label="@string/title_activity_community_garden" >
         </activity>
+        <activity
+            android:name=".activity.SearchFieldsActivity"
+            android:label="@string/title_activity_search_fields" >
+        </activity>
     </application>
 
 </manifest>

@@ -45,5 +45,6 @@
     <string name="sign_out">/users/sign_out</string>
     <string name="title_activity_community_garden">CommunityGardenActivity</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_search_fields">SearchFieldsActivity</string>
 
 </resources>
